@@ -123,19 +123,19 @@ def edit_book_exe():
     id = request.form.get('id')
     
     if title == '':
-        error = '問題文が未入力です。'
+        error = 'タイトルが未入力です'
         return render_template('edit_book.html', error = error)
     if author == '':
-        error = '回答１が未入力です。'
+        error = '著者が未入力です。'
         return render_template('edit_book.html', error = error)
     if publisher == '':
-        error = '回答２が未入力です。'
+        error = '出版社が未入力です。'
         return render_template('edit_book.html', error = error)
     if pages == '':
-        error = '回答３が未入力です。'
+        error = 'ページが未入力です。'
         return render_template('edit_book.html', error = error)
     if id == '':
-        error = '回答４が未入力です。'
+        error = 'IDが未入力です。'
         return render_template('edit_book.html', error = error)
     
     count = db.edit_book(id, title, author, publisher, pages,)
